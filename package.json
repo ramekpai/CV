@@ -1,0 +1,34 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramekpai/CV.git"
+  },
+  "author": "Maksim Tarasov <ramekpai@gmail.com>",
+  "license": "MIT",
+  "exports": {
+    "./schema": "./src/schema.ts",
+    "./resume.en": "./src/resume.en.ts",
+    "./resume.ru": "./src/resume.ru.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "shellcheck": "shellcheck scripts/*.sh",
+    "render": "node src/render.ts",
+    "build": "bash scripts/build.sh"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "typescript": "^7.0.2"
+  },
+  "packageManager": "pnpm@10.28.2",
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.18.1",
+      "onFail": "download"
+    }
+  }
+}

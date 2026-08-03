@@ -1,0 +1,58 @@
+name: CI
+on: [push, pull_request]
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Setup pnpm and node
+        uses: pnpm/setup@5d160c5bc68a09337ad0d5654e237e03253b5879 # v1.0.0
+        with:
+          cache: true
+          install: false
+
+      - name: Install dependencies
+        id: install
+        run: |
+          pnpm install
+
+      - name: Typecheck
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: |
+          pnpm typecheck
+
+      - name: Shellcheck
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        run: |
+          pnpm shellcheck
+
+      - name: Setup Chrome
+        id: chrome
+        if: ${{ !cancelled() && steps.install.outcome == 'success' }}
+        uses: browser-actions/setup-chrome@2e1d749697dd1612b833dba4a722266286fbefcd # v2.1.2
+        
+
+      - name: Build PDF
+        env:
+          CHROME: ${{ steps.chrome.outputs.chrome-path }}
+        run: |
+          pnpm build
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: cv-pdfs
+          path: tmp/*.pdf
+
+      - name: Publish latest release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
+        with:
+          tag_name: latest
+          name: Latest CV
+          files: tmp/*.pdf
