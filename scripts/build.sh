@@ -12,9 +12,16 @@ node "$SRC_DIR/render.ts"
 
 CHROME="${CHROME:-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome}"
 
+chrome_flags=(--headless=new --disable-gpu --no-pdf-header-footer)
+if [ "${CI:-}" = "true" ]; then
+  # CI runners (Ubuntu 23.10+) restrict unprivileged user namespaces,
+  # so Chrome's sandbox cannot start; we only render our own local files there.
+  chrome_flags+=(--no-sandbox)
+fi
+
 for src in "$TMP_DIR"/*.html; do
   pdf="${src%.html}.pdf"
-  "$CHROME" --headless=new --disable-gpu --no-pdf-header-footer \
+  "$CHROME" "${chrome_flags[@]}" \
     --print-to-pdf="$pdf" "file://$src"
   [ -s "$pdf" ] || { echo "FAIL: $pdf was not created" >&2; exit 1; }
 
