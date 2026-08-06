@@ -4,7 +4,9 @@
 
 My resume as typed TypeScript data, rendered to PDF by a zero-dependency pipeline.
 
-**[Download PDF (EN)](https://github.com/ramekpai/CV/releases/latest/download/cv.pdf)** · **[Download PDF (RU)](https://github.com/ramekpai/CV/releases/latest/download/cv.ru.pdf)**
+**[View PDF (EN)](https://ramekpai.github.io/CV/cv.pdf)** · **[View PDF (RU)](https://ramekpai.github.io/CV/cv.ru.pdf)**
+
+Or grab it from the [latest release](https://github.com/ramekpai/CV/releases/tag/latest)
 
 ## How it works
 
