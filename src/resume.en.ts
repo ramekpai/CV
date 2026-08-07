@@ -10,7 +10,7 @@ export const resume = {
     'Open to relocation (EU / US - visa sponsorship required)',
     'Remote-friendly',
   ],
-  summary: 'Senior Frontend Engineer with 6+ years building high-load B2C and B2B platforms. Sole frontend engineer for two product domains at an international food-tech company (1,600+ stores, 27 countries): ~40 React microfrontends and a UI library. Cut frontend CI from 16 to 1–3 minutes (5–20×), shipped a tablet product used in 278 locations, built a design system running in production for years without a critical bug. Hands-on with C# and Node.js when needed. Open to relocation (visa sponsorship required).',
+  summary: 'Senior Frontend Engineer with 8+ years building high-load B2C and B2B platforms. Sole frontend engineer for two product domains at an international food-tech company (1,600+ stores, 27 countries): ~40 React microfrontends and a UI library. Cut frontend CI from 16 to 1–3 minutes (5–20×), shipped a tablet product used in 278 locations, built a design system running in production for years without a critical bug. Hands-on with C# and Node.js when needed. Open to relocation (visa sponsorship required).',
   skills: [
     {
       title: 'Core Stack',
@@ -145,7 +145,7 @@ export const resume = {
       company: 'Etagi',
       companyNote: 'Russia\'s largest real-estate agency (etagi.com)',
       period: {
-        from: '2020-02',
+        from: '2016-01',
         to: '2024-10',
       },
       location: 'Tyumen, Russia',
