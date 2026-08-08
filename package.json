@@ -11,7 +11,8 @@
   "exports": {
     "./schema": "./src/schema.ts",
     "./resume.en": "./src/resume.en.ts",
-    "./resume.ru": "./src/resume.ru.ts"
+    "./resume.ru": "./src/resume.ru.ts",
+    "./resume.de": "./src/resume.de.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit",

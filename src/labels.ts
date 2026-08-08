@@ -23,4 +23,11 @@ export const labels: Record<Locale, Labels> = {
     present: 'наст. время',
     languages: 'Языки',
   },
+  de: {
+    summary: 'Profil',
+    skills: 'Kenntnisse',
+    experience: 'Berufserfahrung',
+    present: 'heute',
+    languages: 'Sprachen',
+  },
 };

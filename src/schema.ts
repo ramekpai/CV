@@ -1,4 +1,4 @@
-export type Locale = 'en' | 'ru';
+export type Locale = 'en' | 'ru' | 'de';
 
 export interface Contact {
   label: string;
