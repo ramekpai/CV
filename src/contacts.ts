@@ -10,8 +10,8 @@ export const contacts = [
     href: 'https://t.me/ramekpai',
   },
   {
-    label: 'linkedin.com/in/maksim-tarasov-163911234',
-    href: 'https://www.linkedin.com/in/maksim-tarasov-163911234',
+    label: 'linkedin.com/in/tarmaks',
+    href: 'https://www.linkedin.com/in/tarmaks',
   },
   {
     label: 'github.com/ramekpai',
